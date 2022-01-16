@@ -29,7 +29,7 @@ const PoetViewModal = (props) => {
             <ListGroup>
               {poet.poems.map(poem => (
                 <ListGroup.Item>
-                  <img src={poem.photo} alt="" width="100%" style={{ maxHeight: 200 }} />
+                  <img src={poem.poster} alt="" width="100%" style={{ maxHeight: 200 }} />
                   <span style={{ marginLeft: 10 }}>
                     {poem.title}
                   </span>
