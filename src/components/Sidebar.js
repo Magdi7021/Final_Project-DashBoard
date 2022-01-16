@@ -5,17 +5,16 @@ import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MovieCreationIcon from "@mui/icons-material/MovieCreation";
 import AddReactionIcon from "@mui/icons-material/AddReaction";
 import RecentActorsIcon from "@mui/icons-material/RecentActors";
 import GroupIcon from "@mui/icons-material/Group";
-import TheatersIcon from "@mui/icons-material/Theaters";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { Link } from "react-router-dom";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 import PoemsContext from "../utils/PoemsContext";
-
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 const drawerWidth = 240;
 
 const Sidebar = () => {
@@ -52,7 +51,7 @@ const Sidebar = () => {
         <List>
           <ListItem>
             <ListItemIcon>
-              <TheatersIcon />
+              <AutoStoriesIcon/>
             </ListItemIcon>
             <ListItemText primary="My poems dashboard" />
           </ListItem>
@@ -61,7 +60,7 @@ const Sidebar = () => {
           <Link to="/poems">
             <ListItem button>
               <ListItemIcon>
-                <MovieCreationIcon />
+                <HistoryEduIcon />
               </ListItemIcon>
               <ListItemText primary="poems" sx={{ color: "white", textDecoration: "none" }} />
             </ListItem>
