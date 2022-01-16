@@ -5,7 +5,6 @@ import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import AddReactionIcon from "@mui/icons-material/AddReaction";
 import RecentActorsIcon from "@mui/icons-material/RecentActors";
 import GroupIcon from "@mui/icons-material/Group";
 import { createTheme, ThemeProvider } from "@mui/material";
@@ -15,6 +14,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import PoemsContext from "../utils/PoemsContext";
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
+import PostAddIcon from '@mui/icons-material/PostAdd';
 const drawerWidth = 240;
 
 const Sidebar = () => {
@@ -68,7 +68,7 @@ const Sidebar = () => {
           <Link to="/categories">
             <ListItem button>
               <ListItemIcon>
-                <AddReactionIcon />
+                <PostAddIcon />
               </ListItemIcon>
               <ListItemText primary="categories" sx={{ color: "white", textDecoration: "none" }} />
             </ListItem>
