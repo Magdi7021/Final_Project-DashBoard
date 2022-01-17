@@ -28,7 +28,7 @@ function App() {
         email: form.elements.email.value,
         password: form.elements.password.value
       };
-      const response = await axios.post('http://localhost:5000/api/auth/login/admin', adminBody);
+      const response = await axios.post('https://poems-api-1.herokuapp.com/api/auth/login/admin', adminBody);
       localStorage.tokenDashboardPoems = response.data.token;
       toast.success("login success");
       navigate("/poems");
@@ -45,7 +45,7 @@ function App() {
 
   /*Poems*/
   const getPoems = async () => { 
-    const response = await axios.get('http://localhost:5000/api/poems');
+    const response = await axios.get('https://poems-api-1.herokuapp.com/api/poems');
     setPoems([...response.data]);
   };
 
@@ -81,7 +81,7 @@ function App() {
       };
 
       console.log({ poemBody });
-      await axios.post(`http://localhost:5000/api/poems`, poemBody, {
+      await axios.post(`https://poems-api-1.herokuapp.com/api/poems`, poemBody, {
         headers: {
           Authorization: localStorage.tokenDashboardPoems,
         },
@@ -123,7 +123,7 @@ function App() {
         category: categories,
         poets: poets,
       };
-      await axios.put(`http://localhost:5000/api/poems/${poemId}`, poemBody, {
+      await axios.put(`https://poems-api-1.herokuapp.com/api/poems/${poemId}`, poemBody, {
         headers: {
           Authorization: localStorage.tokenDashboardPoems,
         },
@@ -138,7 +138,7 @@ function App() {
 
   const deletePoem = async (poemId) => { 
     try {
-      await axios.delete(`http://localhost:5000/api/poems/${poemId}`, {
+      await axios.delete(`https://poems-api-1.herokuapp.com/api/poems/${poemId}`, {
         headers: {
           Authorization: localStorage.tokenDashboardPoems,
         },
@@ -153,7 +153,7 @@ function App() {
 
   /*Categories*/
   const getCategories = async () => { 
-    const response = await axios.get('http://localhost:5000/api/categories');
+    const response = await axios.get('https://poems-api-1.herokuapp.com/api/categories');
     setCategories([...response.data]);
   };
 
@@ -165,7 +165,7 @@ function App() {
       const categoryBody = {
         name: form.elements.name.value,
       };
-      await axios.post(`http://localhost:5000/api/categories`, categoryBody, {
+      await axios.post(`https://poems-api-1.herokuapp.com/api/categories`, categoryBody, {
         headers: {
           Authorization: localStorage.tokenDashboardPoems,
         },
@@ -186,7 +186,7 @@ function App() {
       const categoryBody = {
         name: form.elements.name.value,
       };
-      await axios.put(`http://localhost:5000/api/categories/${categoryId}`, categoryBody, {
+      await axios.put(`https://poems-api-1.herokuapp.com/api/categories/${categoryId}`, categoryBody, {
         headers: {
           Authorization: localStorage.tokenDashboardPoems,
         },
@@ -201,7 +201,7 @@ function App() {
 
   const deleteCategory = async (categoryId) => { 
     try {
-      await axios.delete(`http://localhost:5000/api/categories/${categoryId}`, {
+      await axios.delete(`https://poems-api-1.herokuapp.com/api/categories/${categoryId}`, {
         headers: {
           Authorization: localStorage.tokenDashboardPoems,
         },
@@ -216,7 +216,7 @@ function App() {
 
   /*Poets*/
   const getPoets = async () => { 
-    const response = await axios.get('http://localhost:5000/api/poets')
+    const response = await axios.get('https://poems-api-1.herokuapp.com/api/poets')
     setPoets([...response.data]);
   };
 
@@ -243,7 +243,7 @@ function App() {
         poems,
       };
 
-      await axios.post("http://localhost:5000/api/poets", poetBody, {
+      await axios.post("https://poems-api-1.herokuapp.com/api/poets", poetBody, {
         headers: {
           Authorization: localStorage.tokenDashboardPoems,
         },
@@ -276,7 +276,7 @@ function App() {
         poems,
       };
 
-      await axios.put(`http://localhost:5000/api/poets/${poetId}`, poetBody, {
+      await axios.put(`https://poems-api-1.herokuapp.com/api/poets/${poetId}`, poetBody, {
         headers: {
           Authorization: localStorage.tokenDashboardPoems,
         },
@@ -291,7 +291,7 @@ function App() {
 
   const deletePoet = async (poetId) => { 
     try {
-      await axios.delete(`http://localhost:5000/api/poets/${poetId}`, {
+      await axios.delete(`https://poems-api-1.herokuapp.com/api/poets/${poetId}`, {
         headers: {
           Authorization: localStorage.tokenDashboardPoems,
         },
@@ -306,7 +306,7 @@ function App() {
 
   /*Useres*/
   const getUsers = async () => { 
-    const response = await axios.get('http://localhost:5000/api/auth/users', {
+    const response = await axios.get('https://poems-api-1.herokuapp.com/api/auth/users', {
       headers: {
         Authorization: localStorage.tokenDashboardPoems,
       },
@@ -320,8 +320,8 @@ function App() {
     try {
       const form = e.target;
       const isAdmin = form.elements.isAdmin.checked;
-      let url = 'http://localhost:5000/api/auth/signup';
-      if(isAdmin) url = 'http://localhost:5000/api/auth/add-admin'
+      let url = 'https://poems-api-1.herokuapp.com/api/auth/signup';
+      if(isAdmin) url = 'https://poems-api-1.herokuapp.com/api/auth/add-admin'
       const userBody = {
         firstName: form.elements.firstName.value,
         lastName: form.elements.lastName.value,
@@ -361,7 +361,7 @@ function App() {
 
       console.log(userBody);
 
-      await axios.put(`http://localhost:5000/api/auth/profile/${profileId}`, userBody, {
+      await axios.put(`https://poems-api-1.herokuapp.com/api/auth/profile/${profileId}`, userBody, {
         headers: {
           Authorization: localStorage.tokenDashboardPoems,
         },
@@ -378,7 +378,7 @@ function App() {
   const deleteUser = async (userId) => {
     try {
       console.log('start delete user');
-      await axios.delete(`http://localhost:5000/api/auth/profile/${userId}`, {
+      await axios.delete(`https://poems-api-1.herokuapp.com/api/auth/profile/${userId}`, {
         headers: {
           Authorization: localStorage.tokenDashboardPoems,
         },
